@@ -11,11 +11,18 @@ public interface CompraRepository {
 	public void buscarCalcado(int numero);
 	public void atualizar (CadastroCalçado compra);
 	public void deletar(int numero);
+	void atualizar();
 	
 	
 	
-	//metodo estoque calcado
-	//public void 
+	/*
+	 * // Métodos Bancários
+		public void sacar(int numero, float valor);
+		public void depositar(int numero, float valor);
+		public void transferir(int numeroOrigem, int numeroDestino, float valor);
+		
+	}
+	 */
 	
 
 }
