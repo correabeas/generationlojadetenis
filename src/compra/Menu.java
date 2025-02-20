@@ -1,11 +1,23 @@
 package compra;
 
+import java.io.IOException;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+import compra.model.CadastroCalçado;
 import compra.util.Cores;
+import compra.model.LançamentoCalçado;
 
 public class Menu {
 
 	public static void main(String[] args) {
+		
+		
+		//teste da classe compra
+		
+		//teste classe 
+
+		LançamentoCalçado tenis1 = new LançamentoCalçado("azul", "casual", "couro",38, 2022);
+		tenis1.visualizar();
 		
 		Scanner leia = new Scanner(System.in);
 	    int opcao;
@@ -19,10 +31,10 @@ public class Menu {
 			System.out.println("                                                     ");
 			System.out.println("                                                     ");
 			System.out.println("                                                     ");
-			System.out.println("            1 - Criar tênis                          ");
-			System.out.println("            2 - Listar todos os tênis                ");
-			System.out.println("            3 - Buscar tênis  por número             ");
-			System.out.println("            4 - Atualizar dados do tênis             ");
+			System.out.println("            1 - Criar calçado                        ");
+			System.out.println("            2 - Listar todos os calçado              ");
+			System.out.println("            3 - Buscar calçado por cor               ");
+			System.out.println("            4 - Atualizar dados do calçado           ");
 			System.out.println("            5 - Excluir tênis                        ");
 			System.out.println("            6 - Nossas Lojas                         ");
 			System.out.println("            7 - Pagamentos                           ");
@@ -33,7 +45,14 @@ public class Menu {
 			System.out.println("                                                     ");
 	   
 			
-			opcao = leia.nextInt();
+			try {
+				opcao = leia.nextInt();
+				
+			}catch(InputMismatchException e) {
+				System.out.println("Digite valores inteiros!");
+				leia.nextLine();
+				opcao=0;
+			}
 			
 			if(opcao == 8) {
 				System.out.println("A Adidas agradece pela sua preferência! Volte Sempre!");
@@ -44,35 +63,35 @@ public class Menu {
 			
 			switch (opcao) {
 			case 1:
-				System.out.println("Criar tênis  ");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Criar calçado: ");
 
 				break;
 			case 2:
-				System.out.println("Listar todos os tênis ");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Listar todos os calçados: ");
 
 				break;
 			case 3:
-				System.out.println("Buscar tênis  por número");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Buscar calçado por cor: ");
 
 				break;
 			case 4:
-				System.out.println("Atualizar dados do tênis");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Atualizar dados do calçado:");
 
 				break;
 			case 5:
-				System.out.println("Excluir tênis");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Excluir calçado: ");
 
 				break;
 			case 6:
-				System.out.println("Nossas Lojas");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Nossas Lojas: ");
 
 				break;
 			case 7:
-				System.out.println("Pagamentos");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Pagamentos: ");
 
 				break;
 			default:
-				System.out.println("Opção Inválida!");
+				System.out.println(Cores.TEXT_WHITE_BOLD + "Opção Inválida!");
 				break;
 	    
 	    }
@@ -87,5 +106,18 @@ public class Menu {
 		System.out.println("github.com/correabeas");
 		System.out.println("*********************************************************");
 	}
+	
+	public static void keyPress() {
+		
+		try {
+			System.out.println(Cores.TEXT_RESET + "Pressione Enter para Continuar...");
+			System.in.read();
+		
+	}catch (IOException e) {
+		System.out.println("Você pressionou uma tecla diferente de ENTER");
 	}
+	}
+}
+	
+	
 
