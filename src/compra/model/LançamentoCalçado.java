@@ -11,8 +11,8 @@ public class LançamentoCalçado extends CadastroCalçado{
 		
 	}
 
-	public LançamentoCalçado(String cor, String tipo, String material, int numeração, int lancamento) {
-		super(cor, tipo, material, numeração);
+	public LançamentoCalçado(String cor, String tipo, String material, int numeração, int codigo,  int lancamento) {
+		super(cor, tipo, material, numeração, codigo);
 		this.lancamento = lancamento;
 	}
 

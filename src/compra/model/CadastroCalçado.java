@@ -2,24 +2,31 @@ package compra.model;
 
 public abstract class CadastroCalçado {
 	
+	
+	
+	
+	
+	
+	
 	private String cor;
 	private String tipo;
 	private String material;
 	private int numeração;
-	
+	private int codigo;
 	
 	
 	public CadastroCalçado() {
 		
 	}
 
-	public CadastroCalçado(String cor, String tipo, String material, int numeração) {
+	public CadastroCalçado(String cor, String tipo, String material, int numeração, int codigo) {
 
 
 		this.cor = cor;
 		this.tipo = tipo;
 		this.material = material;
 		this.numeração = numeração;
+		this.codigo = codigo;
 		
 	}
 
@@ -55,7 +62,13 @@ public abstract class CadastroCalçado {
 		this.numeração = numeração;
 	}
 
-	
+	public int getCodigo() {
+		return codigo;
+	}
+
+	public void setCodigo(int codigo) {
+		this.codigo = codigo;
+	}
 
 	public boolean buscar(String cor) {
 		System.out.println();
@@ -76,6 +89,7 @@ public abstract class CadastroCalçado {
 	     System.out.println("Cor do calçado: " + this.cor);
 	     System.out.println("Tipo do calçado: " + this.tipo);
 	     System.out.println("Material do calçado: " + this.material);
+	     System.out.println("Código do calçado:" +this.codigo);
 	    
 	  }
 	}

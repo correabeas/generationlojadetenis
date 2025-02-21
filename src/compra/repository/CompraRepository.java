@@ -11,7 +11,7 @@ public interface CompraRepository {
 	public void buscarCalcado(int numero);
 	public void atualizar (CadastroCalçado compra);
 	public void deletar(int numero);
-	void atualizar();
+
 	
 	
 	

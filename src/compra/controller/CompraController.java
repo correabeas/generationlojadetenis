@@ -14,65 +14,45 @@ public class CompraController implements CompraRepository {
 	public void cadastrar(CadastroCalçado compra) {
 		listaCompra.add(compra);
 		System.out.println("O calçado :" + compra + " foi cadastrado com sucesso!");
-		
 	}
-
 	@Override
 	public void listarcalcados() {
 		for(var compra: listaCompra) {
 			compra.visualizar();
 		}
-	}
-		
+	}	
 	@Override
 	public void buscarCalcado(int numeração) {
-		//var compra = buscarCalcado(numeração);
-		//if (compra != null) {
-		//	listaCompra.set(listaCompra.indexOf(buscaCompra, compra);
-			//compra.visualizar();
-		}
-		
-	//}
-
+		var compra = buscarNaCollection(numeração);
+		if (compra != null) {
+		compra.visualizar();
+		}	
+	}
 	@Override
 	public void atualizar(CadastroCalçado compra) {
-		var buscarCompra = buscarNaCollection(compra);
-		
+		var buscarCompra = buscarNaCollection(compra.getCodigo());
+		if (buscarCompra != null) {
+	    listaCompra.set(listaCompra.indexOf(compra), compra);
+		}
 	}
 
-	private Object buscarNaCollection(CadastroCalçado compra) {
-		// TODO Auto-generated method stub
+	public CadastroCalçado buscarNaCollection(int numero) {
+		for (var compra: listaCompra) {
+	    if(compra.getCodigo() == numero) {
+	    return compra;	
+	    }
+		}
 		return null;
 	}
 
 	@Override
 	public void deletar(int numero) {
-		//var compra = CadastroCalçado(numero);
-		
-		//if (compra !=null)
-		
-		
-	}
+		var compra = buscarNaCollection(numero);
+		if (compra !=null) {
+	 }
+  }	
+}
 
-	@Override
-	public void atualizar() {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-    
-      public CadastroCalçado buscarNaCollection(int numeração) {
-     
-    	for(var compra: listaCompra);
-    	if(compra.getNumeração() == numeração) {
-    		return compra;
-    		
-    	}
-    
-  return null;
-    }
-    }
 
 	
 
